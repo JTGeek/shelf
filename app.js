@@ -38,6 +38,8 @@ const collection = require(path.join(__dirname, '/routes/collection'))(site);
 app.use('/collection', collection);
 const publisher = require(path.join(__dirname, '/routes/publisher'))(site);
 app.use('/publisher', publisher);
+const testing = require(path.join(__dirname, '/routes/testing'))(site);
+app.use('/testing', testing);
 
 app.get('/', (req, res) => {
 	res.render('index.njk', {
