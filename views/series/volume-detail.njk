@@ -1,18 +1,32 @@
 {% extends '_skeletons/page.njk' %}
 
 {% block content %}
-	<h2>{{ series.title }} Vol. {{ series.volume }}</h2>
-	<ul class="issues">
+	<div class="detail-header">
+		<div class="detail-header-content">
+			<h2>{{ series.title }} Vol. {{ series.volume }}</h2>
+			<span class="publisher">{{ series.publisher.name }}</span>
+		</div>
+		<div class="detail-header-status">
+			{% include '_components/want-have.njk' %}
+		</div>
+	</div>
+	<div class="section-title">
+		<h2>Issues:</h2>
+	</div>
+	<ul class="issue-list">
 		{% for issue in issues %}
 			<li>
 				<a href="/series/{{ issue.series.slug }}/vol/{{ issue.series.volume }}/{{ issue.number }}">
 					<a href="/series/{{ issue.series.slug }}/vol/{{ issue.series.volume }}/{{ issue.number }}">
 						<span class="number">#{{ issue.number }}</span>
-						<span class="issue-title">"{{ issue.title }}"</span>
-						<span class="writer-name">{{ issue.team.writer.name.first }} {{ issue.team.writer.name.last }}</span>
-						<span class="artist-name">{{ issue.team.artist.name.first }} {{ issue.team.artist.name.last }}</span>
-						<span class="date">Published <span class="isoDate">{{ issue.publicationDate }}</span></span>
+						<div class="issue-team">
+							<span class="issue-title">"{{ issue.title }}"</span>
+							{# <span class="writer-name">Writer: <strong>{{ issue.team.writer.name.first }} {{ issue.team.writer.name.last }}</strong></span>
+							<span class="artist-name">Artist: <strong>{{ issue.team.artist.name.first }} {{ issue.team.artist.name.last }}</strong></span> #}
+						</div>
+						{# <span class="date">Published <span class="isoDate">{{ issue.publicationDate }}</span></span> #}
 						<span class="want-have">{{ issue.collectionStatus }}</span>
+						<i class="material-icons">keyboard_arrow_right</i>
 					</a>
 				</a>
 			</li>

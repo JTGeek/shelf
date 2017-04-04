@@ -1,0 +1,38 @@
+.issue-list
+	list-style: none
+	padding: 0
+	margin: 0
+	li
+		padding: 1em
+		border-bottom: 1px solid darken(gray, 10%)
+	li a
+		display: block
+		display: flex
+		justify-content: space-between
+		align-items: center
+		color: purple
+	// Issue Number
+	.number
+		padding: .5em
+		height: 2.5em
+		border: 3px solid darken(gray, 5%)
+		border-radius: .2em
+		font-weight: bold
+		font-size: 1em
+	// Issue Team
+	.issue-team
+		// Issue Title
+		.issue-title
+			font-weight: bold
+			display: block
+		.writer-name, .artist-name
+			font-size: .9em
+			color: black
+			margin-right: 1em
+			word-wrap: break-word
+	// Want / Have
+	.want-have
+		border: 3px solid darken(gray, 5%)
+		padding: .5em
+		height: 2.5em
+		border-radius: .2em

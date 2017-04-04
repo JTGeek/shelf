@@ -37,6 +37,8 @@ body {
 .section-title h2 {
   color: #fff;
   margin: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 .section-title a {
   color: #fff;
@@ -67,28 +69,15 @@ a:active {
 .removeRow:hover {
   cursor: pointer;
 }
-ul.series,
-ul.issues {
-  padding: 0;
-  list-style-type: none;
-}
-ul.series li,
-ul.issues li {
-  padding: 0.5rem 1rem;
-}
 ul.series li {
-  display: flex;
-  justify-content: space-between;
-}
-ul.issues li a {
-  display: block;
   display: flex;
   justify-content: space-between;
 }
 header {
   background: #fff;
-  padding: 1em;
+  padding: 0.5em 0.5em 0.5em 1em;
   display: flex;
+  align-items: center;
   -webkit-box-shadow: 0px 2px 4px #ddd;
   -moz-box-shadow: 0px 2px 4px #ddd;
   box-shadow: 0px 2px 4px #ddd;
@@ -100,8 +89,8 @@ header .logo:hover {
   text-decoration: none;
 }
 header .logo h1 {
-  color: #087e8b;
-  font-size: 1.5rem;
+  color: #3c3c3c;
+  font-size: 1rem;
   margin: 0;
 }
 header .search-icon i {
@@ -192,4 +181,206 @@ input[type="submit"]:hover {
 }
 .focused {
   color: #087e8b;
+}
+.detail-header {
+  color: #fff;
+  z-index: 1;
+  position: relative;
+  display: block;
+  height: 20em;
+  overflow: hidden;
+}
+.detail-header:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  background-image: url("/images/resources/spider-man.jpg");
+  width: 100%;
+  height: 20em;
+  filter: brightness(20%);
+  background-attachment: fixed;
+  background-position: center;
+}
+.detail-header .detail-header-content {
+  padding: 1em;
+}
+.detail-header .detail-header-content h2 {
+  color: #fff;
+  margin: 0;
+}
+.detail-header .detail-header-content .publisher {
+  font-size: 1em;
+  font-weight: bold;
+  display: block;
+  color: #fff;
+}
+.detail-header .detail-header-status {
+  margin: 0 1em 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.detail-header .detail-header-status .want-have-default {
+  border: 3px solid #fff;
+  border-radius: 0.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.detail-header .detail-header-status .want-have-default .want {
+  background: transparent;
+  padding: 0.5em 0 0.5em 0;
+}
+.detail-header .detail-header-status .want-have-default .want img {
+  width: 2em;
+}
+.detail-header .detail-header-status .want-have-default .have {
+  display: none;
+  background: transparent;
+}
+.detail-header .detail-header-status .want-have-default .arrow {
+  flex-grow: 2;
+  color: #fff;
+}
+.detail-header .detail-header-status .want-have-select {
+  border: 3px solid #fff;
+  border-radius: 0.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.detail-header .detail-header-status .want-have-select .want {
+  width: 4em;
+  background: #ff5a5f;
+  padding: 0.5em 0 0.5em 0;
+  transition: 180ms ease background;
+}
+.detail-header .detail-header-status .want-have-select .want:hover {
+  background: #ff262d;
+}
+.detail-header .detail-header-status .want-have-select .want img {
+  width: 2em;
+}
+.detail-header .detail-header-status .want-have-select .have {
+  width: 4em;
+  display: block;
+  background: #087e8b;
+  padding: 0.5em 0 0.5em 0;
+  transition: 180ms ease background;
+}
+.detail-header .detail-header-status .want-have-select .have i {
+  font-size: 2em;
+  color: #fff;
+}
+.detail-header .detail-header-status .want-have-select .have:hover {
+  background: #076b76;
+}
+.detail-header .detail-header-status .want-have-select .close {
+  width: 4em;
+  display: block;
+  background: #3c3c3c;
+  padding: 0.5em 0 0.5em 0;
+  transition: 180ms ease background;
+}
+.detail-header .detail-header-status .want-have-select .close:hover {
+  background: #333;
+}
+.detail-header .detail-header-status .want-have-select .close i {
+  font-size: 2em;
+  color: #fff;
+}
+.detail-header .detail-header-status .want-selected {
+  background: #ff5a5f;
+  border-radius: 0.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.8em;
+  transition: 180ms ease background;
+}
+.detail-header .detail-header-status .want-selected img {
+  width: 2em;
+  margin-right: 0.5em;
+}
+.detail-header .detail-header-status .want-selected span {
+  color: #fff;
+  font-weight: bold;
+}
+.detail-header .detail-header-status .want-selected:hover {
+  text-decoration: none;
+  background: #ff262d;
+}
+.detail-header .detail-header-status .have-selected {
+  background: #087e8b;
+  border-radius: 0.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.8em;
+  transition: 180ms ease background;
+}
+.detail-header .detail-header-status .have-selected i {
+  font-size: 2em;
+  margin-right: 0.5em;
+  color: #fff;
+}
+.detail-header .detail-header-status .have-selected span {
+  color: #fff;
+  font-weight: bold;
+}
+.detail-header .detail-header-status .have-selected:hover {
+  text-decoration: none;
+  background: #076b76;
+}
+.issue-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.issue-list li {
+  padding: 1em;
+  border-bottom: 1px solid #ddd;
+}
+.issue-list li a {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #625d7c;
+}
+.issue-list .number {
+  padding: 0.5em;
+  height: 2.5em;
+  border: 3px solid #e9e9e9;
+  border-radius: 0.2em;
+  font-weight: bold;
+  font-size: 1em;
+}
+.issue-list .issue-team .issue-title {
+  font-weight: bold;
+  display: block;
+}
+.issue-list .issue-team .writer-name,
+.issue-list .issue-team .artist-name {
+  font-size: 0.9em;
+  color: #3c3c3c;
+  margin-right: 1em;
+  word-wrap: break-word;
+}
+.issue-list .want-have {
+  border: 3px solid #e9e9e9;
+  padding: 0.5em;
+  height: 2.5em;
+  border-radius: 0.2em;
 }
